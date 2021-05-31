@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PurchaseEditorNewComponent } from './purchase-editor-new.component';
+import { PurchaseEditorNewComponent } from './purchase/purchase-editor-new.component';
 import { FormsModule } from '@angular/forms';
-import { PurchaseEditorEditComponent } from './purchase-editor-edit.component';
+import { PurchaseEditorEditComponent } from './purchase/purchase-editor-edit.component';
 import { QrScannerComponent } from '../qr-scanner/qr-scanner.component';
 import { QrScannerModule } from '../qr-scanner/qr-scanner.module';
 import { MatFormFieldModule } from '@angular/material/form-field';

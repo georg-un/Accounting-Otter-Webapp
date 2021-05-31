@@ -1,9 +1,9 @@
 import { TestBed } from '@angular/core/testing';
 
-import { PurchaseEditorService } from './purchase-editor.service';
+import { PaymentEditorService } from './payment-editor.service';
 import { TestingModule } from '../../core/testing/testing.module';
 
-describe('PurchaseEditorService', () => {
+describe('PaymentEditorService', () => {
   beforeEach(() => TestBed.configureTestingModule({
     imports: [
       TestingModule
@@ -11,7 +11,7 @@ describe('PurchaseEditorService', () => {
   }));
 
   it('should be created', () => {
-    const service: PurchaseEditorService = TestBed.get(PurchaseEditorService);
+    const service: PaymentEditorService = TestBed.get(PaymentEditorService);
     expect(service).toBeTruthy();
   });
 });

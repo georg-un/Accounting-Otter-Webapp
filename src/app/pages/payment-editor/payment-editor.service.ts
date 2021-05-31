@@ -4,7 +4,7 @@ import { Subject } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class PurchaseEditorService {
+export class PaymentEditorService {
 
   addPurchaseTrigger: Subject<boolean> = new Subject();  // TODO: Replace this by an ngrx action
 

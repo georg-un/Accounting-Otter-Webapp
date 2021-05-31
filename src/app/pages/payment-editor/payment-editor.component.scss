@@ -1,20 +1,5 @@
 @import "../../../assets/variables";
 
-:host {
-  mat-slide-toggle {
-    height: 42px;
-  }
-}
-
-.debit-row {
-  ::ng-deep {
-    .mat-list-item-content {
-      width: 100%;
-      padding: 0 0 0 4px;
-    }
-  }
-}
-
 .editor-container {
   $padding-top-bottom: 16px;
   height: calc(100vh - #{$header-height} - (#{$padding-top-bottom} * 2));
@@ -39,37 +24,6 @@
   flex: 9;
 }
 
-.delete-sweep {
-  position: absolute;
-  right: 50px;
-}
-
-.debit-row {
-  display: flex;
-}
-
-.debit-name-col {
-  flex: 1;
-}
-
-.debit-input-col {
-  width: 25vw;
-}
-
-.debit-actions {
-  margin: 16px 0 0 0;
-}
-
-.stroked-button {
-  min-width: 148px;
-}
-
-.input-button {
-  height: 34px;
-  margin-left: 8px;
-  align-self: center;
-}
-
 .justify-space-between {
   display: flex;
   justify-content: space-between;
@@ -77,6 +31,12 @@
 
 .full-width {
   width: 100%;
+}
+
+.input-button {
+  height: 34px;
+  margin-left: 8px;
+  align-self: center;
 }
 
 .autofilled {

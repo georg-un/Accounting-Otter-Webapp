@@ -1,0 +1,41 @@
+@import "../../../../assets/variables";
+
+:host {
+  mat-slide-toggle {
+    height: 42px;
+  }
+}
+
+.debit-row {
+  ::ng-deep {
+    .mat-list-item-content {
+      width: 100%;
+      padding: 0 0 0 4px;
+    }
+  }
+}
+
+.delete-sweep {
+  position: absolute;
+  right: 50px;
+}
+
+.debit-row {
+  display: flex;
+}
+
+.debit-name-col {
+  flex: 1;
+}
+
+.debit-input-col {
+  width: 25vw;
+}
+
+.debit-actions {
+  margin: 16px 0 0 0;
+}
+
+.stroked-button {
+  min-width: 148px;
+}

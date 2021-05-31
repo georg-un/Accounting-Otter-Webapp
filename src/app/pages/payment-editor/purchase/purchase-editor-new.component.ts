@@ -1,18 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from '../../core/entity/user';
-import { AppState } from '../../store/states/app.state';
+import { User } from '../../../core/entity/user';
+import { AppState } from '../../../store/states/app.state';
 import { Store } from '@ngrx/store';
 import { distinctUntilChanged, filter, take, takeUntil } from 'rxjs/operators';
-import { Purchase } from '../../core/entity/purchase';
-import { IdGeneratorService } from '../../core/id-generator.service';
-import { Debit } from '../../core/entity/debit';
-import { PurchaseEditorService } from './purchase-editor.service';
-import { PurchaseActions } from '../../store/actions/purchase.actions';
-import { UserSelectors } from '../../store/selectors/user.selectors';
-import { AbstractEditor } from './abstract-purchase-editor';
-import { DistributionFragment } from './distribution-fragment';
-import { ReceiptScannerService } from '../receipt-scanner/receipt-scanner.service';
-import { FullscreenDialogService } from '../../shared/fullscreen-dialog/fullscreen-dialog.service';
+import { Purchase } from '../../../core/entity/purchase';
+import { IdGeneratorService } from '../../../core/id-generator.service';
+import { Debit } from '../../../core/entity/debit';
+import { PaymentEditorService } from '../payment-editor.service';
+import { PurchaseActions } from '../../../store/actions/purchase.actions';
+import { UserSelectors } from '../../../store/selectors/user.selectors';
+import { AbstractPaymentEditor } from '../abstract-payment-editor';
+import { DistributionFragment } from '../distribution-fragment';
+import { ReceiptScannerService } from '../../receipt-scanner/receipt-scanner.service';
+import { FullscreenDialogService } from '../../../shared/fullscreen-dialog/fullscreen-dialog.service';
 import { of } from 'rxjs';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
@@ -21,9 +21,12 @@ import { MatSlideToggleChange } from '@angular/material/slide-toggle';
 @Component({
   selector: 'app-editor-new',
   templateUrl: './purchase-editor.component.html',
-  styleUrls: ['./purchase-editor.component.scss']
+  styleUrls: [
+    '../payment-editor.component.scss',
+    './purchase-editor.component.scss'
+  ]
 })
-export class PurchaseEditorNewComponent extends AbstractEditor implements OnInit {
+export class PurchaseEditorNewComponent extends AbstractPaymentEditor implements OnInit {
 
   // TODO: Add animation to slide custom debit fields in and out
   // TODO: Add validation before upload
@@ -31,7 +34,7 @@ export class PurchaseEditorNewComponent extends AbstractEditor implements OnInit
   customDistribution = false;
 
   constructor(protected store: Store<AppState>,
-              protected editorService: PurchaseEditorService,
+              protected editorService: PaymentEditorService,
               protected snackBar: MatSnackBar,
               protected dialog: MatDialog,
               protected fullscreenDialog: FullscreenDialogService,

@@ -4,7 +4,7 @@ import { Observable, Subject } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { AppState } from '../../store/states/app.state';
 import { Location } from '@angular/common';
-import { PurchaseEditorService } from '../../pages/purchase-editor/purchase-editor.service';
+import { PaymentEditorService } from '../../pages/payment-editor/payment-editor.service';
 import { LayoutActions } from '../../store/actions/layout.actions';
 import { LeftButtonIconEnum, RightButtonIconEnum } from './button-enums';
 import { PurchaseActions } from '../../store/actions/purchase.actions';
@@ -51,7 +51,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
     ]
   };
 
-  constructor(private editorService: PurchaseEditorService,
+  constructor(private editorService: PaymentEditorService,
               private store: Store<AppState>,
               private location: Location,
               private dialog: MatDialog

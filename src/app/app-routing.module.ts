@@ -4,8 +4,8 @@ import { PurchaseListComponent } from './pages/purchase-list/purchase-list.compo
 import { SummaryComponent } from './pages/summary/summary.component';
 import { PurchaseViewComponent } from './pages/purchase-view/purchase-view.component';
 import { LayoutComponent } from './layout/layout.component';
-import { PurchaseEditorNewComponent } from './pages/purchase-editor/purchase-editor-new.component';
-import { PurchaseEditorEditComponent } from './pages/purchase-editor/purchase-editor-edit.component';
+import { PurchaseEditorNewComponent } from './pages/payment-editor/purchase/purchase-editor-new.component';
+import { PurchaseEditorEditComponent } from './pages/payment-editor/purchase/purchase-editor-edit.component';
 import { AuthGuard } from './auth.guard';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { InterceptorService } from './core/interceptor.service';

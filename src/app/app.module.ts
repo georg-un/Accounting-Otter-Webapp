@@ -7,7 +7,7 @@ import { LayoutModule } from './layout/layout.module';
 import { SummaryModule } from './pages/summary/summary.module';
 import { PurchaseListModule } from './pages/purchase-list/purchase-list.module';
 import { PurchaseViewModule } from './pages/purchase-view/purchase-view.module';
-import { PurchaseEditorModule } from './pages/purchase-editor/purchase-editor.module';
+import { PurchaseEditorModule } from './pages/payment-editor/purchase-editor.module';
 import { AppStoreModule } from './store/app-store.module';
 import { CoreModule } from './core/core.module';
 import { RegisterModule } from './pages/register/register.module';

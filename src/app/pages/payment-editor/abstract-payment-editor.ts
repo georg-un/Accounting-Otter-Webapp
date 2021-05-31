@@ -6,7 +6,7 @@ import { takeUntil } from 'rxjs/operators';
 import { User } from '../../core/entity/user';
 import { Store } from '@ngrx/store';
 import { AppState } from '../../store/states/app.state';
-import { PurchaseEditorService } from './purchase-editor.service';
+import { PaymentEditorService } from './payment-editor.service';
 import { DistributionFragment } from './distribution-fragment';
 import { MultilineSnackbarComponent } from '../../shared/multiline-snackbar/multiline-snackbar.component';
 import { BigNumber } from 'bignumber.js';
@@ -16,7 +16,7 @@ import { FullscreenDialogService } from '../../shared/fullscreen-dialog/fullscre
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
 
-export abstract class AbstractEditor implements OnInit, OnDestroy {
+export abstract class AbstractPaymentEditor implements OnInit, OnDestroy {
 
   purchase: Purchase;
   receipt$: Observable<Blob>;
@@ -33,7 +33,7 @@ export abstract class AbstractEditor implements OnInit, OnDestroy {
   };
 
   protected constructor(protected store: Store<AppState>,
-                        protected editorService: PurchaseEditorService,
+                        protected editorService: PaymentEditorService,
                         protected fullscreenDialog: FullscreenDialogService,
                         protected snackBar: MatSnackBar,
                         protected dialog: MatDialog
