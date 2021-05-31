@@ -12,6 +12,7 @@ import { InterceptorService } from './core/interceptor.service';
 import { RegisterComponent } from './pages/register/register.component';
 import { ReceiptScannerComponent } from './pages/receipt-scanner/receipt-scanner.component';
 import { ReceiptViewComponent } from './pages/receipt-view/receipt-view.component';
+import { CompensationEditorNewComponent } from './pages/payment-editor/compensation/compensation-editor-new.component';
 
 const routes: Routes = [
   {
@@ -45,13 +46,18 @@ const routes: Routes = [
         data: {animation: 'PurchaseView'}
       },
       {
-        path: 'new',
+        path: 'new-purchase',
         component: PurchaseEditorNewComponent,
         data: {animation: 'Editor'}
       },
       {
-        path: 'edit/:purchaseId',
+        path: 'edit-purchase/:purchaseId',
         component: PurchaseEditorEditComponent,
+        data: {animation: 'Editor'}
+      },
+      {
+        path: 'new-compensation',
+        component: CompensationEditorNewComponent,
         data: {animation: 'Editor'}
       },
       {

@@ -58,7 +58,7 @@ function deriveLayoutFromUrl(url: string): Layout {
     layout.showLogo = true;
   } else if (url.startsWith('/purchase')) {
     layout.fab = 'edit';
-    layout.fabRoute = {commands: ['edit', url.split('/')[2]], extras: {}};
+    layout.fabRoute = {commands: ['edit-purchase', url.split('/')[2]], extras: {}};
     layout.leftHeaderButton = LeftButtonIconEnum.Back;
     layout.rightHeaderButton = RightButtonIconEnum.Sync;
     layout.showLogo = false;

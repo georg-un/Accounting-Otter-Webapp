@@ -102,7 +102,7 @@ export class PurchaseEditorEditComponent extends AbstractPaymentEditor implement
     if (!this.customDistribution) {
       this.distributeToAllFields();
     }
-    if (!this.isPurchaseValid()) {
+    if (!this.isPurchaseValid(true)) {
       return;
     }
     this.purchase.debits = [];

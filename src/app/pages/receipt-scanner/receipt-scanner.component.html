@@ -26,6 +26,14 @@
       <mat-icon>skip_next</mat-icon>
       Continue without receipt
     </button>
+    <button
+            *ngIf="!(purchaseId$ | async)"
+            routerLink="/new-compensation"
+            mat-flat-button
+    >
+      <mat-icon>person_add</mat-icon>
+      Add compensation
+    </button>
   </div>
 
 

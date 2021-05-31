@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PurchaseEditorNewComponent } from './purchase/purchase-editor-new.component';
 import { FormsModule } from '@angular/forms';
-import { PurchaseEditorEditComponent } from './purchase/purchase-editor-edit.component';
 import { QrScannerComponent } from '../qr-scanner/qr-scanner.component';
 import { QrScannerModule } from '../qr-scanner/qr-scanner.module';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -16,12 +14,16 @@ import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { PurchaseEditorNewComponent } from './purchase/purchase-editor-new.component';
+import { PurchaseEditorEditComponent } from './purchase/purchase-editor-edit.component';
+import { CompensationEditorNewComponent } from './compensation/compensation-editor-new.component';
 
 
 @NgModule({
   declarations: [
     PurchaseEditorNewComponent,
-    PurchaseEditorEditComponent
+    PurchaseEditorEditComponent,
+    CompensationEditorNewComponent
   ],
   imports: [
     CommonModule,

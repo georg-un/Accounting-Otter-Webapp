@@ -114,7 +114,7 @@ export class ReceiptScannerComponent implements OnInit, AfterViewInit {
           routerCommands.push('purchase', purchaseId);
         } else {
           // If the purchase does not exist yet, navigate to the editor-new
-          routerCommands.push('new');
+          routerCommands.push('new-purchase');
         }
         this.ngZone.run(() => {
           this.router.navigate(routerCommands);

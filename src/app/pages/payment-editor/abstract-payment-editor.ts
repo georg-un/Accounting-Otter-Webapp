@@ -82,7 +82,7 @@ export abstract class AbstractPaymentEditor implements OnInit, OnDestroy {
       });
   }
 
-  isPurchaseValid(): boolean {
+  isPurchaseValid(checkDistributionFragments: boolean): boolean {
     if (!this.purchase.buyerId) {
       this.snackBar.openFromComponent(MultilineSnackbarComponent, {data: 'User ID is missing.'});
       return false;
@@ -92,7 +92,7 @@ export abstract class AbstractPaymentEditor implements OnInit, OnDestroy {
     } else if (!this.sumAmount) {
       this.snackBar.open('Please enter the amount.');
       return false;
-    } else if (!new BigNumber(this.sumAmount).isEqualTo(
+    } else if (checkDistributionFragments && !new BigNumber(this.sumAmount).isEqualTo(
       this.distributionFragments
         .filter(fragment => fragment.checked)
         .map(fragment => new BigNumber(fragment.amount))

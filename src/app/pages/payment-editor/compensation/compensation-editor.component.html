@@ -1,0 +1,67 @@
+<div class="editor-container">
+  <div class="editor-group">
+
+    <div class="justify-space-between">
+      <i class="material-icons editor-symbol-col">euro_symbol</i>
+      <mat-form-field
+        class="editor-input-col"
+        [class.autofilled]="autofilledState.amount"
+      >
+        <mat-label>Amount</mat-label>
+        <input matInput
+               [ngModel]="sumAmount"
+               (ngModelChange)="sumAmount = $event; autofilledState.amount = false;"
+               type="number" min="0" step="0.01"
+               required/>
+      </mat-form-field>
+    </div>
+
+    <div class="justify-space-between">
+      <i class="material-icons editor-symbol-col">view_quilt</i>
+      <mat-form-field class="editor-input-col">
+        <mat-label>Receiver</mat-label>
+        <mat-select
+          [(ngModel)]="receiverId"
+          id="category" class="browser-default"
+        >
+          <mat-option *ngFor="let receiver of receivers$ | async" [value]="receiver.userId">
+            {{receiver.firstName}} {{receiver.lastName}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="justify-space-between">
+      <i class="material-icons editor-symbol-col">today</i>
+      <div class="editor-input-col justify-space-between">
+        <mat-form-field class="full-width" [class.autofilled]="autofilledState.date">
+          <input [ngModel]="date ? date : undefined"
+                 (ngModelChange)="purchase.date = $event.getTime(); autofilledState.date = false"
+                 [matDatepicker]="picker"
+                 matInput
+                 placeholder="Date"
+                 required
+          />
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <button class="input-button"
+                mat-stroked-button
+                (click)="onSetDateNowClick()"
+        >Now</button>
+      </div>
+    </div>
+
+    <div class="justify-space-between">
+      <i class="material-icons editor-symbol-col">description</i>
+      <mat-form-field class="editor-input-col">
+        <mat-label>Notes</mat-label>
+        <input
+          [(ngModel)]="purchase.description"
+          matInput type="text"
+        />
+      </mat-form-field>
+    </div>
+  </div>
+
+</div>
